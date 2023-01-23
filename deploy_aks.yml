@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: idcsaas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: idcsaas
+  template:
+    metadata:
+      labels:
+        app: idcsaas
+    spec:
+      containers:
+      - name: idcsaas
+        image: mukeshravanaa/saasbapp:latest
+        ports:
+        - containerPort: 8000
